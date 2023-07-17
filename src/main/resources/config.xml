@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+         ">
+    <bean class="org.example.User" name="user">
+        <property name="id" value="1"/>
+        <property name="name" value="Neha"/>
+        <!-- collaborator
+         s and configuration for this bean go here -->
+
+    </bean>
+    <bean id = "user1" class="org.example.User" >
+        <property name="id">
+            <value>
+            2
+           </value>
+        </property>
+        <property name="name">
+            <value>Suruchi</value>
+        </property>
+    </bean>
+
+  <!--  <bean id="E" class="org.example.Employee">
+        <constructor-arg value="101" type="int"></constructor-arg>
+        <constructor-arg value="Jagruti" type="String"></constructor-arg>
+    </bean> -->
+    <bean id="f" class="org.example.Employee">
+        <constructor-arg value="102" type="int"></constructor-arg>
+    </bean>
+
+    <bean id="G" class="org.example.Employee">
+        <constructor-arg value="Rachi" type="String"></constructor-arg>
+    </bean>
+
+    <bean id="Aggregation" class="org.example.Employee">
+        <constructor-arg value="103" type="int"></constructor-arg>
+        <constructor-arg value="Sachi" type="String"></constructor-arg>
+        <constructor-arg>
+            <ref bean="user1"/>
+        </constructor-arg>
+    </bean>
+    <bean id="collection-test" class="org.example.Question">
+        <constructor-arg value="12" type="int"></constructor-arg>
+        <constructor-arg value="What is Java?"></constructor-arg>
+        <constructor-arg>
+            <list>
+            <value>Java is a programming language</value>
+            <value>Java is a Platform</value>
+            <value>Java is an Island of Indonasia</value>
+           </list>
+        </constructor-arg>
+
+    </bean>
+
+</beans>
